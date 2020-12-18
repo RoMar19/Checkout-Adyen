@@ -19,6 +19,11 @@ def create_app():
     @app.route('/')
     def home():
         return render_template('home.html')
+    
+    @app.route('/cart/<integration>')
+    def cart(integration):
+        return render_template('cart.html', method=checkout)
+
 
     @app.route('/checkout/<integration>')
     def checkout(integration):
