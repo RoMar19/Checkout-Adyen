@@ -15,7 +15,7 @@ def adyen_payment_methods():
     adyen.client.xapikey = 'AQEyhmfxKYLObRNKw0m/n3Q5qf3VaY9UCJ14XWZE03G/k2NFisuRs7z7KhB9kBC+ZOWG3q8QwV1bDb7kfNy1WIxIIkxgBw==-4HKICWIDhG8LHS5WQIjtc87Qxi+fkyN1wJo3s2XzGEU=-78wF+<p7,84eKmX;'
 
     payment_methods_request = {
-        'merchantAccount': AdyenRecruitmentCOM,
+        'merchantAccount': "AdyenRecruitmentCOM",
         'reference': 'RocioMartin_adyenrecruitment',
         'shopperReference': 'Python Checkout Shopper',
         'channel': 'Web',
