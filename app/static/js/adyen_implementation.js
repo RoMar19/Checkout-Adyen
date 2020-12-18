@@ -59,8 +59,6 @@ function filterUnimplemented(pm) {
       "scheme",
       "ideal",
       "sepadirectdebit",
-      "directEbanking",
-      "paypal",
     ].includes(it.type)
   );
   return pm;
@@ -112,6 +110,18 @@ function handleServerResponse(res, component) {
         break;
     }
   }
+}
+
+// Adjust style for Specific Components
+if (type === 'dropin') {
+    document.getElementById('component').style.padding = '0em';
+    let container = document.getElementsByClassName('checkout-component')[0];
+    container.style.border = 'none';
+    container.style.padding = '0';
+} else if (type === 'paypal') {
+    let el = document.querySelector('.payment');
+    el.style.display = 'flex';
+    el.style.justifyContent = 'center';
 }
 
 initCheckout();

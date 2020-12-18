@@ -20,10 +20,6 @@ def create_app():
     def home():
         return render_template('home.html')
 
-    @app.route('/cart/<integration>')
-    def cart(integration):
-        return render_template('cart.html', method=integration)
-
     @app.route('/checkout/<integration>')
     def checkout(integration):
         payment_methods_response = adyen_payment_methods()
@@ -75,11 +71,6 @@ def create_app():
     @app.route('/result/error', methods=['GET'])
     def checkout_error():
         return render_template('checkout-failed.html')
-
-    @app.route('/favicon.ico')
-    def favicon():
-        return send_from_directory(os.path.join(app.root_path, 'static'),
-                                   'img/favicon.ico')
 
     return app
 
